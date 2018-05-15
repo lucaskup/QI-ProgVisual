@@ -7,6 +7,33 @@ public class Aula1 {
 
     public static void main(String[] args) {
         //testeCastDeTipos();
+        //segundaParteHeranca();
+        ArrayList<Animal> lista = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        
+        do{
+            System.out.println("Digite 1 para Gato ou 2 para Cachorro");
+
+            int opcao = sc.nextInt();
+            Animal a;
+            if(opcao == 1){
+                a = new Gato();
+            }else{
+                a = new Cachorro();
+            }
+            lista.add(a);
+
+            System.out.println("Deseja continuar inserindo animais? [1 para sim ou 2 para não");
+        }while(sc.nextInt() == 1);
+        for (Animal animal : lista) {
+            System.out.println(animal.falar());
+        }
+        
+        
+    }
+
+    private static void segundaParteHeranca() {
+        
         Pessoa p1 = new Professor(29,"Lucas");
         Pessoa p2 = new Aluno(15,"Joaozinho");
         Pessoa p3 = new Pessoa(20,"Mariazinha");
@@ -19,8 +46,6 @@ public class Aula1 {
         for (Pessoa pessoa : pessoas) {
             System.out.println(pessoa.falar());
         }
-        
-        
     }
 /***
  * Método criado no começo da aula para teste de tipos
